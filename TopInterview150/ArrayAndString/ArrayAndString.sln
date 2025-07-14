@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSortedArray", "MergeSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27RemoveElement", "27RemoveElement\27RemoveElement.csproj", "{D24ABEE4-D5A7-4AC5-B94D-851B716B2C2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveDuplicatesFromArray1", "RemoveDuplicatesFromArray1\RemoveDuplicatesFromArray1.csproj", "{450EE1F9-E5EC-4540-8B85-65F7D92C4505}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D24ABEE4-D5A7-4AC5-B94D-851B716B2C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D24ABEE4-D5A7-4AC5-B94D-851B716B2C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D24ABEE4-D5A7-4AC5-B94D-851B716B2C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450EE1F9-E5EC-4540-8B85-65F7D92C4505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450EE1F9-E5EC-4540-8B85-65F7D92C4505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450EE1F9-E5EC-4540-8B85-65F7D92C4505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450EE1F9-E5EC-4540-8B85-65F7D92C4505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
