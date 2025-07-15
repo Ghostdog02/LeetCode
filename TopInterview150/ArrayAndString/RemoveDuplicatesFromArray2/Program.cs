@@ -2,12 +2,44 @@
 {
     public static void Main(string[] args)
     {
-
+        LinearTimeApproach();
     }
 
     public static void LinearTimeApproach()
     {
-        
+        int[] nums = [0, 0, 1, 1, 1, 1, 2, 2, 2, 4];
+
+        //If counter = 2 it means there are three ocurrences of a number
+        int duplcateCounter = 0;
+
+        int pointer = 0;
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (duplcateCounter >= 2 && nums[pointer] != nums[i])
+            {
+                nums[pointer] = nums[i];
+                pointer++;
+            }
+
+            else if (duplcateCounter == 2)
+            {
+                pointer = i;
+                duplcateCounter--;
+            }
+
+            else if (nums[pointer] != nums[i])
+            {
+                pointer++;
+                duplcateCounter = 0;
+            }
+
+            else if (nums[pointer] == nums[i])
+            {
+                duplcateCounter++;
+                pointer++;
+            }
+        }
     }
 
     public static void QuadraticRuntimeApproach()
@@ -17,7 +49,7 @@
         int pointer = 0;
         int end = nums.Length;
 
-        //If counter = 2 it means there are three ocurrences
+        //If counter = 2 it means there are three ocurrences of a number
         int duplcateCounter = 0;
 
         for (int i = 1; i < end; i++)
@@ -55,9 +87,7 @@
                     pointer = i - 1;
 
                     currentValue = nums[i];
-                }
-
-                while (lastPointerValue == currentValue);
+                } while (lastPointerValue == currentValue);
             }
 
             if (nums[pointer] != nums[i])
