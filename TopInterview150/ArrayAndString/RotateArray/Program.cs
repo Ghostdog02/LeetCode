@@ -1,46 +1,71 @@
-﻿int[] nums = [-1, -100, 3, 99];
-int rotateAmount = 2;
-
-int length = nums.Length;
-bool[] visited = new bool[length];
-int lastrotatedIndex = 0;
-int lastReplacedNumber = 0;
-
-
-
-for (int counter = 0; counter < length; counter++)
+﻿public class Program
 {
-    int rotation = lastrotatedIndex + rotateAmount;
-    int rotatedIndex = rotation >= length ? rotation % length : rotation;
-
-    while (visited[rotatedIndex])
+    public static void Main(string[] args)
     {
-        lastrotatedIndex++;
-        rotation = lastrotatedIndex + rotateAmount;
-        rotatedIndex = rotation >= length ? rotation % length : rotation;
-        lastReplacedNumber = nums[lastrotatedIndex];
+        int[] nums = [1, 2, 3, 4, 5, 6, 7];
+
+        int length = nums.Length;
+        int rotateAmount = 3;
+        // bound rotateAmount to [0..n-1]
+        rotateAmount %= length;
+
+        if (rotateAmount == 0)
+            return;
+
+        int lastIndex = 0;
+        int lastValue = nums[0];
+
+        int cycles = GetGreatestCommonDivisor(length, rotateAmount);
+        int cycleStartIndex = 0;
+        int cyclesDone = 0;
+
+        while (cyclesDone < cycles)
+        {
+            int nextIndex = lastIndex + rotateAmount;
+
+            if (nextIndex >= length)
+            {
+                nextIndex -= length;
+            }
+
+            int temp = nums[nextIndex];
+
+            nums[nextIndex] = lastValue;
+
+            lastIndex = nextIndex;
+            lastValue = temp;
+
+            if (cycleStartIndex == nextIndex)
+            {
+                cyclesDone++;
+
+                if (cyclesDone == cycles)
+                {
+                    break;
+                }
+
+                //Prepare for next cycle
+                cycleStartIndex++;
+                lastIndex = cycleStartIndex;
+                lastValue = nums[lastIndex];
+            }
+        }
+
+        foreach (int number in nums)
+        {
+            Console.Write($"{number}, ");
+        }
     }
-
-    int temp = nums[rotatedIndex];
-
-    if (counter == 0)
+    
+    public static int GetGreatestCommonDivisor(int a, int b)
     {
-        nums[rotatedIndex] = nums[0];
+        while (b != 0)
+        {
+            int t = b;
+            b = a % b;
+            a = t;
+        }
+
+        return a;
     }
-
-    else
-    {
-        nums[rotatedIndex] = lastReplacedNumber;
-    }
-
-    visited[rotatedIndex] = true;
-
-    lastrotatedIndex = rotatedIndex;
-    lastReplacedNumber = temp;
-
-}
-
-foreach (int number in nums)
-{
-    System.Console.Write($"{number}, ");
 }
