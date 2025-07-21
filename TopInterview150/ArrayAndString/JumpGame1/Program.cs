@@ -4,7 +4,11 @@
     {
         int[] nums = [5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0];
 
-        
+        if (nums.Length == 1)
+        {
+            return;
+        }
+
         int currJump = nums[0];
         bool[] visited = new bool[nums.Length];
 
