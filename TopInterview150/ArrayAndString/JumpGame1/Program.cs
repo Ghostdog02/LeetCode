@@ -2,11 +2,42 @@
 {
     public static void Main(string[] args)
     {
-        int[] nums = [5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0];
+        int[] nums = [0, 2, 3];
 
+        System.Console.WriteLine(LinearComplexityApproach(nums));
+    }
+
+    public static bool LinearComplexityApproach(int[] nums)
+    {
         if (nums.Length == 1)
         {
-            return;
+            return true;
+        }
+
+        bool canReachEnd = false;
+        int indexToBeSearched = nums.Length - 1;
+
+        for (int i = nums.Length - 2; i >= 0; i--)
+        {
+            if (nums[i] + i >= indexToBeSearched)
+            {
+                if (i == 0)
+                {
+                    canReachEnd = true;
+                }
+                
+                indexToBeSearched = i;
+            }
+        }
+
+        return canReachEnd;
+    }
+
+    public static bool QuadraticComplexityApproach(int[] nums)
+    {
+        if (nums.Length == 1)
+        {
+            return true;
         }
 
         int currJump = nums[0];
@@ -18,8 +49,7 @@
         {
             if (currJump >= nums.Length - 1)
             {
-                System.Console.WriteLine(true);
-                return;
+                return true;
             }
 
             else if (nums[currJump] == 0 || visited[currJump])
@@ -28,8 +58,7 @@
 
                 if (currJump < 0)
                 {
-                    System.Console.WriteLine("false");
-                    return;
+                    return false;
                 }
             }
 
@@ -42,11 +71,8 @@
 
                 currJump += nums[currJump];
             }
-
-
-
         }
 
-        System.Console.WriteLine("false");
+        return false;
     }
 }
