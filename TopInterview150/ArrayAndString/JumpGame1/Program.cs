@@ -40,6 +40,7 @@
             return true;
         }
 
+        //Current Index jumped to
         int currJump = nums[0];
         bool[] visited = new bool[nums.Length];
 
