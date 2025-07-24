@@ -1,40 +1,72 @@
-﻿public class Program
+﻿using System.Buffers;
+
+public class Program
 {
     public static void Main(string[] args)
     {
-        int[] nums = [2, 3, 1, 1, 4];
+        int[] nums = [1, 2, 3, 4, 5];
 
-        int targetIndex = nums.Length - 1;
+        Console.WriteLine(LinearApproach(nums));
+    }
 
+    public static int LinearApproach(int[] nums)
+    {
         int jumpCount = 0;
+        int furthestDistance = 0;
+        int currEnd = 0;
 
-
-        for (int i = nums.Length - 2; i >= 0; i--)
+        for (int i = 0; i < nums.Length; i++)
         {
-            int currFurthestJumpIndex = int.MinValue;
-            for (int j = 0; j < nums.Length; j++)
+            int reach = i + nums[i];
+
+            if (reach > furthestDistance)
             {
-                if (j + nums[j] >= targetIndex)
-                {
-                    if (currFurthestJumpIndex == int.MinValue ||
-                        currFurthestJumpIndex > j)
-                    {
-                        currFurthestJumpIndex = j;
-                    }
-                }
+                furthestDistance = reach;
             }
 
-            if (currFurthestJumpIndex != targetIndex)
+            if (i == currEnd)
             {
-                targetIndex = currFurthestJumpIndex;
+                currEnd = furthestDistance;
                 jumpCount++;
-                if (targetIndex == 0)
-                {
+
+                if (currEnd >= nums.Length - 1)
                     break;
-                }
             }
         }
 
-        Console.WriteLine(jumpCount);
+        return jumpCount;
+    }
+
+
+    public static int QuadraticApproach(int[] nums)
+    {
+        int jumpCount = 0;
+        int currentIndex = 0;
+        int currJump = 0;
+    
+        while (currJump < nums.Length - 1)
+        {
+            currJump = currentIndex + nums[currentIndex];
+            jumpCount++;
+    
+            if (currJump >= nums.Length - 1)
+            {
+                return jumpCount;
+            }
+    
+            int idealIndexToJumpFrom = currJump;
+    
+            for (int i = currJump - 1; i > currentIndex; i--)
+            {
+                if (i + nums[i] > idealIndexToJumpFrom + nums[idealIndexToJumpFrom])
+                {
+                    idealIndexToJumpFrom = i;
+                }
+            }
+    
+            currentIndex = idealIndexToJumpFrom;
+        }
+    
+        return jumpCount;
     }
 }
