@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int[] nums = [1, 2, 3, 4, 5];
+        int[] nums = [2, 3, 0, 1, 4];
 
         Console.WriteLine(LinearApproach(nums));
     }
