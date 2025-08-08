@@ -2,9 +2,11 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidPalindrome", "ValidPalindrome.csproj", "{592DAC20-C34D-18AB-69DA-22D719ED4813}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsSubsequence", "IsSubsequence\IsSubsequence.csproj", "{3CD08E54-D746-4B0C-87B9-973D5A338C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "167TwoSum", "167TwoSum\167TwoSum.csproj", "{DB4640EB-8242-4DDE-ABA5-B7875697B2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidPalindrome", "ValidPalindrome\ValidPalindrome.csproj", "{E77F006A-3ED7-4399-918C-364E113D29D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,14 @@ Global
 		{3CD08E54-D746-4B0C-87B9-973D5A338C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD08E54-D746-4B0C-87B9-973D5A338C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD08E54-D746-4B0C-87B9-973D5A338C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4640EB-8242-4DDE-ABA5-B7875697B2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4640EB-8242-4DDE-ABA5-B7875697B2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4640EB-8242-4DDE-ABA5-B7875697B2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4640EB-8242-4DDE-ABA5-B7875697B2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E77F006A-3ED7-4399-918C-364E113D29D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77F006A-3ED7-4399-918C-364E113D29D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77F006A-3ED7-4399-918C-364E113D29D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E77F006A-3ED7-4399-918C-364E113D29D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
