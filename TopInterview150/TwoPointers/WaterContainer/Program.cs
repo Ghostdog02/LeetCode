@@ -37,12 +37,4 @@
 
         System.Console.WriteLine(maxArea);
     }
-
-    public static int CalculateArea(int left, int right, int[] heights)
-    {
-        int height = Math.Min(heights[left], heights[right]);
-        int length = Math.Abs(left - right);
-
-        return height * length;
-    }
 }
