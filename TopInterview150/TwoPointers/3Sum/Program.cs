@@ -20,12 +20,13 @@
 
     public IList<IList<int>> FindTriplets(int[] numbers)
     {
+        Array.Sort(numbers);
         var triplets = new List<IList<int>>();
         var currentTriplet = new List<int>();
 
         int numbersLength = numbers.Length;
-        int pointer1;
-        int pointer2;
+        int left;
+        int right;
 
         // for (int i = 0; i < numbers.Length; i++)
         // {
@@ -69,27 +70,42 @@
         //     }
         // }
 
-        // return triplets;
-
-        for (int i = 0; i < numbersLength; i++)
+        for (int i = 0; i < numbers.Length; i++)
         {
-            for (int j = 0; j < numbersLength; j++)
+            left = 0;
+            right = numbers.Length - 1;
+
+            while (left < right)
             {
-                for (int k = 0; k < numbersLength; k++)
-                {
-                    if (numbers[i] + numbers[j] + numbers[k] == 0 && i != k && j != i && j != k)
-                    {
-                        currentTriplet = new List<int> { numbers[i], numbers[j], numbers[k] };
-                        currentTriplet.Sort();
-                        if (!triplets.Any(sequence => sequence.SequenceEqual(currentTriplet)))
-                        {
-                            triplets.Add(currentTriplet);
-                        }
-                    }
-                }
+
             }
         }
 
         return triplets;
     }
+
+    public int IncrementPointerIfCurrIndex(int currIndex, int pointer)
+    {
+        if (pointer == currIndex)
+        {
+            pointer++;
+        }
+
+        return pointer;
+    }
+
+    public void ValidatePointer(int pointer, int numbersLength)
+    {
+        
+    }
+
+    // public int WrapPointer(int pointer, int numbersLength)
+    // {
+    //     if (pointer > numbersLength - 1)
+    //     {
+    //         pointer -= numbersLength;
+    //     }
+
+    //     return pointer;
+    // }
 }
