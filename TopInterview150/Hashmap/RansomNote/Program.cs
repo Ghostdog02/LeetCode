@@ -16,7 +16,7 @@
             {
                 bigDictionary[currLetter]++;
             }
-
+            
             else
             {
                 bigDictionary.Add(currLetter, 1);
@@ -24,7 +24,7 @@
         }
 
         occurrences = 0;
-        
+
         for (int i = 0; i < ransomNote.Length; i++)
         {
             currLetter = ransomNote[i];
