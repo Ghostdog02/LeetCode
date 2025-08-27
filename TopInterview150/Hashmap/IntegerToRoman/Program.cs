@@ -21,39 +21,53 @@ var romanToIntegerSubtractions = new Dictionary<int, string>()
     { 900, "CM" },
 };
 
-var keys = romanToIntegerBase.Keys;
+var baseKeys = romanToIntegerBase.Keys.Reverse();
+var substractionKeys = romanToIntegerSubtractions.Keys.Reverse();
 
 var result = new StringBuilder();
-int input = 3749;
-string convertedNum = input.ToString();
-
-// int reversedInput = int.Parse(convertedNum.Reverse().ToString());
-
-int order = 10 ^ (convertedNum.Length - 1);
+int input = 1994;
+string nums = input.ToString();
+int order = (int)Math.Pow(10, nums.Length - 1);
 int currDigit;
+int addedNumber;
 
 while (input != 0)
 {
-    currDigit = int.Parse(input.ToString()[0].ToString());
+    nums = input.ToString();
+    order = (int)Math.Pow(10, nums.Length - 1);
+    currDigit = int.Parse(nums[0].ToString());
+
     if (currDigit != 4 && currDigit != 9)
     {
-        int key = keys.Last(number => (order - number) >= 0);
-        int occurrences = order / key;
+        int key = baseKeys.First(number => (input - number) >= 0);
+        int occurrences = input / key;
 
-        if (occurrences > 3)
+        if (occurrences >= 4)
         {
+            key = substractionKeys.First(number => (input - number) >= 0);
+            occurrences = input / key;
+            addedNumber = currDigit * order;
+            result.Append(romanToIntegerSubtractions[addedNumber]);
             
         }
 
-        result.Append(romanToIntegerBase[key], occurrences);
+        else
+        {
+            addedNumber = key * occurrences;
+            result.Append(romanToIntegerBase[key], occurrences);
+        }
     }
 
     else
     {
-        result.Append(romanToIntegerSubtractions[currDigit * order]);
+        addedNumber = currDigit * order;
+        result.Append(romanToIntegerSubtractions[addedNumber]);
     }
 
-    //Remove first Digit
-    input %= (int)Math.Pow(10, (int)Math.Ceiling(Math.Log10(input)) - 1);
-    order /= 10;
-}
+    input -= addedNumber;
+    // int firstDigitRemoval = (int)Math.Pow(10, (int)Math.Ceiling(Math.Log10(input)) - 1);
+    // input %= firstDigitRemoval;
+    // order /= 10;
+} 
+
+System.Console.WriteLine(result.ToString());
