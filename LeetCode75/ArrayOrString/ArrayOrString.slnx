@@ -2,5 +2,6 @@
   <Project Path="1071-GreatestCommonDivisorStrings/1071-GreatestCommonDivisorStrings.csproj" />
   <Project Path="1431-KidsWithTheGreatestNumberOfCandies/1431-KidsWithTheGreatestNumberOfCandies.csproj" />
   <Project Path="1768-MergeStringsAlternately/1768-MergeStringsAlternately.csproj" />
+  <Project Path="345-ReverseVowelsString/345-ReverseVowelsString.csproj" />
   <Project Path="605-CanPlaceFlowers/605-CanPlaceFlowers.csproj" />
 </Solution>

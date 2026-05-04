@@ -12,7 +12,7 @@ class Program
         System.Console.WriteLine(MergeAlternately(word1, word2));
     }
 
-    static void MergeAlternately(string word1, string word2)
+    static string MergeAlternately(string word1, string word2)
     {
         var builder = new StringBuilder();
         int i = 0;

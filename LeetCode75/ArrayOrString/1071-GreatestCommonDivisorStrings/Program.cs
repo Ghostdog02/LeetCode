@@ -26,7 +26,7 @@ class Program
         while (len2 != 0)
         {
             int temp = len2;
-            int len2 = len1 % len2;
+            len2 = len1 % len2;
             len1 = temp;
         }
 

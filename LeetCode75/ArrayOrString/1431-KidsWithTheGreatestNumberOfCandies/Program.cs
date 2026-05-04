@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<int> candies = [2, 3, 5, 1, 3];
+        int[] candies = [2, 3, 5, 1, 3];
         int extraCandies = 3;
 
         KidsWithCandies(candies, extraCandies);
