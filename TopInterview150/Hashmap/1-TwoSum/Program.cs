@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] arr = TwoSum(new int[] { 3, 2, 4 }, 6);
+        int[] arr = TwoSum(new int[] { 1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1 }, 11);
 
         System.Console.WriteLine( string.Join(", ", arr));
     }
@@ -17,10 +17,15 @@ class Program
         {
             if (set.Contains(target - nums[i]))
             {
-                
+                return new int[] { i, nums.IndexOf(target - nums[i]) };
+            }
+
+            else if (!set.Contains(nums[i]))
+            {
+                set.Add(nums[i]);
             }
         }
 
-        return new int[] { };
+        return new int[] { -1, -1 };
     }
 }
