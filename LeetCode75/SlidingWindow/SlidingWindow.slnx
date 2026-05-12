@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="1004-MaxConsecutiveOnesIII/1004-MaxConsecutiveOnesIII.csproj" />
+  <Project Path="1456-MaximumVowelsInSubstring/1456-MaximumVowelsInSubstring.csproj" />
   <Project Path="643-MaximumAverageSubarrayI/643-MaximumAverageSubarrayI.csproj" />
 </Solution>
