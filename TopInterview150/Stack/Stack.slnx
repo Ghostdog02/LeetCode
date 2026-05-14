@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="150-EvaluateReversePolishNotation/150-EvaluateReversePolishNotation.csproj" />
+  <Project Path="155-MinStack/155-MinStack.csproj" />
+  <Project Path="71-SimplifyPath/71-SimplifyPath.csproj" />
+</Solution>
