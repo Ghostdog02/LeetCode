@@ -6,49 +6,36 @@ class Program
     {
         Console.WriteLine("Hello, World!");
     }
-    
+
     public bool IsValidSudoku(char[][] board)
     {
-        var row = new HashSet<char>();
-        var col = new HashSet<char>();
-        var subBox = new HashSet<char>();
-        
-        for (int i = 0; i < board.GetLength(0); i++)
-        {
-            for (int j = 0; j < board.GetLength(1); j++)
-            {
-                if (board[i][j] != '.')
-                {
-                    if (!row.Add(board[i][j]))
-                    {
-                        return false;
-                    }
-                }
+        var rows = new HashSet<char>[9];
+        var cols = new HashSet<char>[9];
+        var boxes = new HashSet<char>[9];
 
-                if (board[j][i] == '.') 
-                    continue;
+        for (int i = 0; i < 9; i++)
+        {
+            rows[i] = new HashSet<char>();
+            cols[i] = new HashSet<char>();
+            boxes[i] = new HashSet<char>();
+        }
+
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                char c = board[i][j];
                 
-                if (!row.Add(board[i][j]))
-                {
+                if (c == '.') 
+                    continue;
+
+                int boxIndex = (i / 3) * 3 + (j / 3);
+
+                if (!rows[i].Add(c) || !cols[j].Add(c) || !boxes[boxIndex].Add(c))
                     return false;
-                }
             }
-            
-            row.Clear();
-            col.Clear();
         }
 
-        for (int rows = 0; rows < UPPER; rows++)
-        {
-            for (int cols = 0; j < UPPER; j++)
-            {
-                for (int k = 0; k < UPPER; k++)
-                {
-                    
-                }
-            }
-        }
-        
-        return false;
+        return true;
     }
 }
