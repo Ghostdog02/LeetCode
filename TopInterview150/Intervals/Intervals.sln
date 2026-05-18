@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "228-SummaryRanges", "228-SummaryRanges.csproj", "{73EE9035-320B-4822-8545-46E9105BF3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "56-MergeIntervals", "56-MergeIntervals\56-MergeIntervals.csproj", "{E21DEC08-DE2E-482F-A31D-846F35D9DEE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73EE9035-320B-4822-8545-46E9105BF3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EE9035-320B-4822-8545-46E9105BF3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EE9035-320B-4822-8545-46E9105BF3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EE9035-320B-4822-8545-46E9105BF3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21DEC08-DE2E-482F-A31D-846F35D9DEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21DEC08-DE2E-482F-A31D-846F35D9DEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21DEC08-DE2E-482F-A31D-846F35D9DEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21DEC08-DE2E-482F-A31D-846F35D9DEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

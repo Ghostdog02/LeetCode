@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="36-ValidSudoku/36-ValidSudoku.csproj" />
+  <Project Path="48-RotateImage/48-RotateImage.csproj" />
+  <Project Path="54-SpiralMatrix/54-SpiralMatrix.csproj" />
 </Solution>

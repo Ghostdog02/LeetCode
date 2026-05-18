@@ -1,7 +1,11 @@
 <Solution>
   <Project Path="1071-GreatestCommonDivisorStrings/1071-GreatestCommonDivisorStrings.csproj" />
   <Project Path="1431-KidsWithTheGreatestNumberOfCandies/1431-KidsWithTheGreatestNumberOfCandies.csproj" />
+  <Project Path="151-ReverseWordsInString/151-ReverseWordsInString.csproj" />
   <Project Path="1768-MergeStringsAlternately/1768-MergeStringsAlternately.csproj" />
+  <Project Path="238-ProductOfArrayExceptSelf/238-ProductOfArrayExceptSelf.csproj" />
+  <Project Path="334-IncreasingTripletSubsequence/334-IncreasingTripletSubsequence.csproj" />
   <Project Path="345-ReverseVowelsString/345-ReverseVowelsString.csproj" />
+  <Project Path="443-StringCompression/443-StringCompression.csproj" />
   <Project Path="605-CanPlaceFlowers/605-CanPlaceFlowers.csproj" />
 </Solution>
